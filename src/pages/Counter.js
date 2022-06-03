@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Menu, Dropdown, Input, Button, Space} from 'antd';
+import { Dropdown, Button} from 'antd';
 import Styled from '../styled/components';
 import {mathOperations} from "../utils/mathOperations";
 import AddNumbers from "../utils/addNumbers";
