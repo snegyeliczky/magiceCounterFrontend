@@ -1,7 +1,7 @@
 import {mathOperations} from "./mathOperations";
 
 const NumberCheck = (number) => {
-    const numberValue = parseInt(number);
+    const numberValue = parseFloat(number);
     return isNaN(numberValue) ? 0 : numberValue;
 };
 
