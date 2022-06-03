@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 const Container= styled.div`
   display: grid;
   grid-gap: 10px;
+  padding: 10px;
+  margin-top: 10vh;
 `;
 
 const CounterContainer = styled.div`

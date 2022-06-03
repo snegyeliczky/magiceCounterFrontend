@@ -1,7 +1,5 @@
 .App {
-  margin-top: 50vh;
   text-align: center;
-  padding: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
