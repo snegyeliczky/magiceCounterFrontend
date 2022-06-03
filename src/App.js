@@ -8,7 +8,7 @@ import {PageHeader} from "antd";
 function App() {
   return (
     <div className="App">
-        <PageHeader>This is the Magice Counter</PageHeader>
+        <PageHeader >This is the Magice Counter</PageHeader>
         <Counter/>
     </div>
   );
