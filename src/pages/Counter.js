@@ -16,15 +16,15 @@ const Counter = () => {
     const { add } =mathOperations;
     const [counter,setCounter] = useState(add);
     const [sum,setSum] = useState(0);
-    const firsInput = useRef(0);
-    const secondInput = useRef(0);
+    const firsInput = useRef(null);
+    const secondInput = useRef(null);
 
     const handleMenuClick = (e) => {
         setCounter(e.key);
     };
 
     const handelCount = () => {
-        const result = AddNumbers(firsInput.current.input.value,secondInput.current.input.value,counter);
+        const result = AddNumbers(firsInput.current.value,secondInput.current.value,counter);
         setSum(result);
     };
 
@@ -33,24 +33,32 @@ const Counter = () => {
         await axios.post(apiUrls.setMyNumber,myNum);
     };
 
+    const clearAll = () => {
+        firsInput.current.value=0
+        secondInput.current.value=0
+        setCounter(add)
+        setSum(0)
+    }
+
 
     return (
         <Styled.Container>
             <SavedNumber/>
             <Styled.CounterContainer>
-                <Input placeholder={'add Number'} defaultValue={0} type={"number"} ref={firsInput}/>
+                <Styled.NumberInput placeholder={'add Number'} defaultValue={0} type={"number"} ref={firsInput} />
                 <Dropdown overlay={<MenuItems handleMenuClick={handleMenuClick}/>}>
                     <Button>
                         {counter}
                     </Button>
                 </Dropdown>
-                <Input placeholder={'add Number'} defaultValue={0} type={"number"} ref={secondInput}/>
+                <Styled.NumberInput placeholder={'add Number'} defaultValue={0} type={"number"} ref={secondInput} />
                 <Button onClick={handelCount} >Count</Button>
             </Styled.CounterContainer>
             <Styled.SumContainer>
                 <div>{sum}</div>
                 <Button onClick={saveResult}>Save</Button>
             </Styled.SumContainer>
+            <Button onClick={clearAll}>Clear</Button>
         </Styled.Container>
     );
 };

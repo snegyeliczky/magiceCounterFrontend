@@ -19,7 +19,14 @@ const SumContainer = styled.div`
   
 `;
 
+const NumberInput = styled.input`
+  border-radius: 6px;
+  
+  
+`;
+
 export default {
+    NumberInput,
     Container,
     CounterContainer,
     SumContainer
